@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/veku'
+let g:netrw_dirhist_2='/home/veku/.config/i3'
+let g:netrw_dirhist_3='/home/veku/.config'
+let g:netrw_dirhist_4='/home/veku/.config/i3'

@@ -1,0 +1,71 @@
+alignment mr
+double_buffer yes
+gap_x 10
+gap_y 10
+background yes
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,sticky,below,skip_taskbar,skip_pager
+own_window_argb_visual yes
+own_window_argb_value 255 
+use_xft yes
+xftfont Sans:size=8
+TEXT
+${font openlogos:size=12}${font Arial:size=12}${color 0088cc}OpenSuse ${color Ivory}${font openlogos:size=11}Tumbleweed${font }
+
+${font size=9:italic}${color slate grey}CPU Usage $hr${color }${font }
+CPU1 ${alignr}${cpu cpu1}%
+${cpugraph cpu1 12, 200}
+CPU2 ${alignr}${cpu cpu2}%
+${cpugraph cpu2 12, 200}
+CPU3 ${alignr}${cpu cpu3}%
+${cpugraph cpu1 12, 200}
+CPU4 ${alignr}${cpu cpu4}%
+${cpugraph cpu1 12, 200}
+
+CPU-Temp.${alignr}${hwmon temp 1}°C
+
+${font size=9:italic}${color slate grey}Ram Usage $hr${color }${font }
+RAM ${alignr}$mem/$memmax
+${membar 6, 200}
+Swap ${alignr}$swap/$swapmax
+${swapbar 6, 200}
+
+${font size=10:italic}${color slate grey}Filesystem $hr${color }${font }
+/ ${alignr}${fs_free /}
+${fs_bar 6, 200 /}
+/home ${alignr}${fs_used /home}
+${fs_bar 6, 200 /home}
+
+#${font size=10:italic}${color slate grey}Top CPU Tasks $hr${color }${font }
+#${color #ddaa00}${top name 1}${alignr}${top cpu 1}%${color }
+#${top name 2}${alignr}${top cpu 2}%
+#${top name 3}${alignr}${top cpu 3}%
+${font size=11:italic}${color slate grey}Top RAM Tasks  $hr${color }${font }
+${color #ddaa00}${top_mem name 1}${alignr}${top_mem mem 1}%${color }
+${top_mem name 2}${alignr}${top_mem mem 2}%
+${top_mem name 3}${alignr}${top_mem mem 3}%
+${top_mem name 4}${alignr}${top_mem mem 4}%
+${font size=9:italic}${color slate grey}Infos $hr${color }${font }
+#Kernel: ${alignr}$kernel ($machine)
+UPTIME: ${alignr}$uptime
+DATE: ${alignr}$alignc${exec date +"%j/%V %A %b %e"}
+CLOCK: ${alignr}${time %H:%M:%S}
+#User: ${alignr}$alignc${exec whoami} @ $nodename
+SYSTEM_FS: $alignr${fs_type}
+
+${font size=11:italic}${color slate grey}Network $hr${color }${font }
+IP (Lan): $alignr${addr wlp0s29u1u1}
+#IP (extern): $alignr${execi 600 wget http://checkip.dyndns.org/ -q -O - | grep -Eo '\<[[:digit:]]{1,3}(\.[[:digit:]]{1,3}){3}\>'}
+Total Down $alignr${totaldown wlp0s29u1u1}
+Total Up   $alignr${totalup wlp0s29u1u1}
+Download ${alignr}${downspeed wlp0s29u1u1}
+#${downspeedgraph 12, 200 wlp0s29u1u1}
+Upload ${alignr}${upspeed wlp0s29u1u1}
+
+${font size=11:italic}${color slate grey}BATTERY $hr${color }${font } 
+Capacity:$alignr${execi 60 acpi | grep -Eo '[0-9]+%'}
+Status:$alignr${execi 60 acpi | grep -Eo '\w+,' | grep -Eo '\w+'}
+Remaining:$alignr${execi 60 acpi | grep -Eo '(:?[0-9]+){3}'}
+

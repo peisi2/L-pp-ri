@@ -1,0 +1,28 @@
+alias s='cd ..'
+alias PV='sudo zypper dub -y'
+alias MC1='mc -S sand256.ini'
+alias MC2='mc -S modarin256root-defbg.ini'
+alias MC3='mc -S modarcon16-defbg.ini'
+alias MC4='mc -S modarin256-defbg.ini'
+alias MC5='mc -S dark.ini'
+alias MC6='mc -S seasons-winter16M.ini' 
+alias MC7='mc -S seasons-spring16M.ini' 
+alias MC8='mc -S seasons-summer16M.ini' 
+alias MC9='mc -S seasons-autumn16M.ini'
+alias L='ls -C --color=always'
+alias GMK='killall -9 gnome-mplayer'
+alias TAR='tar zcvpf'
+alias MC0='mc -S gotar.ini'
+alias Stop='sudo systemctl stop firewalld'
+alias Fire='sudo systemctl stop firewalld.service'
+alias Sort11='du -cks * | sort -rn | head -11'
+alias LOG='sudo tail -f /var/log/{messages,maillog} -n 25 | ccze -A'
+alias CONKY='killall conky && conky -c /home/mika/.conky_fluxbox'
+alias Tls='tree -L'
+alias Pycharm='sh /snap/pycharm-community/current/bin/pycharm.sh'
+
+# TRANSMISSION
+alias Trn='ssh -4 -N mika@himageek.dy.fi -p 9999 -L 9091:localhost:9091 &'
+# PLEX
+alias Px='ssh -4 -N mika@himageek.dy.fi -p 9999 -L 32400:localhost:32400 &'
+
