@@ -22,7 +22,7 @@ alias Tls='tree -L'
 alias Pycharm='sh /snap/pycharm-community/current/bin/pycharm.sh'
 
 # TRANSMISSION
-alias Trn='ssh -4 -N mika@himageek.dy.fi -p 9999 -L 9091:localhost:9091 &'
+alias Trn='ssh -4 -N mika@himagk.dy.fi -p 8999 -L 9092:localhost:9091 &'
 # PLEX
-alias Px='ssh -4 -N mika@himageek.dy.fi -p 9999 -L 32400:localhost:32400 &'
+alias Px='ssh -4 -N mika@himagk.dy.fi -p 8999 -L 32403:localhost:32400 &'
 
